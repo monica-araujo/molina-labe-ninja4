@@ -6,25 +6,30 @@ import flutter from '../img/flutter_dev-scaled.png'
 import frontend from '../img/Front-end.png'
 import fullstack from '../img/fullstack.png' 
 import uiux from '../img/UIUX-1.png'
+import Carousel  from 'react-elastic-carousel';
+
 
 
 const Image = styled.img ` 
-    height: 130px;
-    object-fit: cover;
+    height: 180px;
+    width: 250px;
+    object-fit: cover!important ;
     border: 1px solid;
     border-radius: 10%;
     border: none;
 `
 const ConteinerCard = styled.div ` 
-    display: block;
-    outline: none;
-    margin-right: auto;
+    display: flex;
     margin-left: auto;
-    padding-left: 16px;
-    columns: 3;
-    padding: 5px;
-    width: 850px;
+    margin-right: auto;
+    outline: none;
+    padding: 15px;
+    align-items: center;
+    width: 538px;
 
+`
+const Conteiner = styled.div ` 
+    background-color: #DDA0DD;
 `
 
 const Card = styled.div `
@@ -39,38 +44,38 @@ const Card = styled.div `
     padding: 0.7rem 0.9rem;
     border-radius: 10px;
     border: none;
+    width: 380px ;
+    padding:12px;
     background-color: #fff;
-    background-color: #DDA0DD;
+    background-color: whitesmoke;
 `
 
-const TextoPrincipal = styled.h2 ` 
+const TextoPrincipal = styled.h1 ` 
 
     text-align: center;
     font-family: 'Roboto Mono';
-    color: ;
+    color:whitesmoke ;
 `
 
 const Orçamento = styled.h4 ` 
     color: #4B0082;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     :hover {
-        color:#7B68EE;
+        color:#A52A2A;
     }
 `
 const NomeDoServiço = styled.p ` 
 
     font-family: 'Roboto Mono';
-    font-size: 18px;
+    font-size: 15px;
     text-align: center;
 `
-
 
 export default class Servicos extends React.Component {
 
     render() {
-
         return (
-            <div> 
+            <Conteiner> 
                 <div>
 
                     <TextoPrincipal>Principais serviços pedidos</TextoPrincipal>
@@ -79,56 +84,60 @@ export default class Servicos extends React.Component {
                         
 
                 </div>
-            
+
+                
+
                 <ConteinerCard>
 
-                    <Card>
-                        <Image src={frontend} />
-                        <NomeDoServiço>Front-end Developer</NomeDoServiço>
-                        <Orçamento>Solicitar orçamento</Orçamento>
+                    <Carousel autoplays > 
+                        <Card>
+                            <Image src={frontend} />
+                            <NomeDoServiço>Front-end Developer</NomeDoServiço>
+                            <Orçamento>Solicitar orçamento</Orçamento>
 
-                    </Card>
-
-
-                    <Card>
-                        <Image src={backend} />
-                        <NomeDoServiço>Back-end Developer</NomeDoServiço>
-                        <Orçamento>Solicitar orçamento</Orçamento>
-
-                    </Card>
+                        </Card>
 
 
-                    <Card> 
-                        <Image src={fullstack} />   
-                        <NomeDoServiço>Full Stack Developer</NomeDoServiço>
-                        <Orçamento>Solicitar orçamento</Orçamento>
+                        <Card>
+                            <Image src={backend} />
+                            <NomeDoServiço>Back-end Developer</NomeDoServiço>
+                            <Orçamento>Solicitar orçamento</Orçamento>
 
-                    </Card>
+                        </Card>
 
-                    <Card> 
-                        <Image src={uiux} />
-                        <NomeDoServiço>UX/UI Designer</NomeDoServiço>
-                        <Orçamento>Solicitar orçamento</Orçamento>
 
-                    </Card>
+                        <Card> 
+                            <Image src={fullstack} />   
+                            <NomeDoServiço>Full Stack Developer</NomeDoServiço>
+                            <Orçamento>Solicitar orçamento</Orçamento>
 
-                    <Card> 
-                        <Image src={game} />
-                        <NomeDoServiço>Game Developer</NomeDoServiço>
-                        <Orçamento>Solicitar orçamento</Orçamento>
+                        </Card>
 
-                    </Card>
+                        <Card> 
+                            <Image src={uiux} />
+                            <NomeDoServiço>UX/UI Designer</NomeDoServiço>
+                            <Orçamento>Solicitar orçamento</Orçamento>
 
-                    <Card> 
-                        <Image src={flutter} />
-                        <NomeDoServiço>Flutter Developer</NomeDoServiço>
-                        <Orçamento>Solicitar orçamento</Orçamento>
+                        </Card>
 
-                    </Card>
+                        <Card> 
+                            <Image src={game} />
+                            <NomeDoServiço>Game Developer</NomeDoServiço>
+                            <Orçamento>Solicitar orçamento</Orçamento>
 
+                        </Card>
+
+                        <Card> 
+                            <Image src={flutter} />
+                            <NomeDoServiço>Flutter Developer</NomeDoServiço>
+                            <Orçamento>Solicitar orçamento</Orçamento>
+
+                        </Card>
+                    </Carousel>
                 </ConteinerCard>
 
-            </div>
+               
+            </Conteiner>
         )
     }
 }
