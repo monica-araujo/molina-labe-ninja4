@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React from 'react'
 import styled from 'styled-components'
 import backend from '../img/back-end-developer.png'
@@ -7,7 +8,6 @@ import frontend from '../img/Front-end.png'
 import fullstack from '../img/fullstack.png' 
 import uiux from '../img/UIUX-1.png'
 import Carousel  from 'react-elastic-carousel';
-
 
 
 const Image = styled.img ` 
@@ -29,7 +29,7 @@ const ConteinerCard = styled.div `
 
 `
 const Conteiner = styled.div ` 
-    background-color: #DDA0DD;
+    background-color: #f5f4fc;
 `
 
 const Card = styled.div `
@@ -46,15 +46,14 @@ const Card = styled.div `
     border: none;
     width: 380px ;
     padding:12px;
-    background-color: #fff;
-    background-color: whitesmoke;
+    background-color: #bdbcc4;
 `
 
 const TextoPrincipal = styled.h1 ` 
 
     text-align: center;
     font-family: 'Roboto Mono';
-    color:whitesmoke ;
+    color: #494949 ;
 `
 
 const Orçamento = styled.h4 ` 
@@ -68,13 +67,16 @@ const NomeDoServiço = styled.p `
 
     font-family: 'Roboto Mono';
     font-size: 15px;
+    color:#5f2b8c;
     text-align: center;
 `
 
 export default class Servicos extends React.Component {
+    
+      render() {
 
-    render() {
         return (
+            
             <Conteiner> 
                 <div>
 
@@ -89,7 +91,7 @@ export default class Servicos extends React.Component {
 
                 <ConteinerCard>
 
-                    <Carousel autoplays > 
+                    <Carousel > 
                         <Card>
                             <Image src={frontend} />
                             <NomeDoServiço>Front-end Developer</NomeDoServiço>
