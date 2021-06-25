@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 
-
-
 const FormContainer = styled.div` 
     background-color: #b000c5;
     height: 400px;
