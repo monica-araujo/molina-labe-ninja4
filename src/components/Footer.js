@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import FacebookLogo from '../../images/facebook.png'
-import InstagramLogo from '../../images/instagram.png'
-import YoutubeLogo from '../../images/youtube.png'
-import TwitterLogo from '../../images/twitter.png'
-import LogoFooter from '../../images/logo.jpeg';
+import FacebookLogo from '../images/facebook.png'
+import InstagramLogo from '../images/instagram.png'
+import YoutubeLogo from '../images/youtube.png'
+import TwitterLogo from '../images/twitter.png'
+import LogoFooter from '../images/logo.jpeg';
 
 const FooterContainer = styled.div` 
 	background-color: #f6f2fc;
@@ -19,6 +19,7 @@ const Titles = styled.h3`
 `
 const Paragraph = styled.p` 
 	color: #4f4f50;
+
 `
 
 const LogoContainer = styled.div` 
@@ -42,6 +43,7 @@ const Socialogo = styled.div`
 const SocialLogoContainer = styled.div`
 	a{
 		padding: 5px;
+		
 	}
 `
 

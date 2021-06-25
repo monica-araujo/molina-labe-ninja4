@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Logo from "../img2/logo.png";
-
+import Conteiner from './AppConteiner'
 const ImagemLogo = styled.img`
   width: 125px;
   padding-left: 7px;
@@ -56,12 +56,12 @@ export default class header extends React.Component {
     return (
       <div className="Header">
         <StyleHeader>
-          <ImagemLogo src={Logo} />
+         <a href={Conteiner} ><ImagemLogo src={Logo} /></a> 
           <Menu>
             <Li>Como Funciona</Li>
             <Li>Entrar</Li>
             <Li>
-              <Button>Seja Um Profissional</Button>
+              <Button onClick={this.props.trocarParaTelaCadastro}  >Seja Um Profissional</Button>
             </Li>
           </Menu>
         </StyleHeader>
