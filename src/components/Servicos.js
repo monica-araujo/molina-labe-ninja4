@@ -1,12 +1,12 @@
 /* eslint-disable no-undef */
-import React from 'react'
-import styled from 'styled-components'
-import backend from '../img/back-end-developer.png'
-import game from '../img/Develop-a-Game-Step-18.png'
-import flutter from '../img/flutter_dev-scaled.png'
-import frontend from '../img/Front-end.png'
-import fullstack from '../img/fullstack.png' 
-import uiux from '../img/UIUX-1.png'
+import React from 'react';
+import styled from 'styled-components';
+import backend from '../img/back-end-developer.png';
+import game from '../img/Develop-a-Game-Step-18.png';
+import flutter from '../img/flutter_dev-scaled.png';
+import frontend from '../img/Front-end.png';
+import fullstack from '../img/fullstack.png';
+import uiux from '../img/UIUX-1.png';
 import Carousel  from 'react-elastic-carousel';
 
 

@@ -7,15 +7,16 @@ export default class App extends React.Component {
 	render() {
 
 		return (
-		<div>
+			<div>
+				
+				<AppContainer />
 
-		<AppContainer />
+				<Servicos />
 
-		<Servicos />
-    <Footer />
+				<Footer />
 
-		</div>
-	)
+			</div>
+		)	
+	}
+
 }
-	
-

@@ -63,21 +63,22 @@ export class Footer extends Component {
 		  <Socialogo>
 			  <Titles>Redes Sociais</Titles>
 			  <SocialLogoContainer>
-				<a href="https://pt-br.facebook.com/">
+				<a target="blank" git href="https://pt-br.facebook.com/">
 					<img src={FacebookLogo} alt="" />
 				</a>
-				<a href="https://twitter.com/login?lang=pt">
+				<a target="blank" href="https://twitter.com/login?lang=pt">
 					<img src={TwitterLogo} alt="" />
 				</a>
-				<a href="https://www.youtube.com/">
+				<a target="blank" href="https://www.youtube.com/">
 					<img src={YoutubeLogo} alt="" />
 				</a>
-				<a href="https://www.instagram.com/">
+				<a target="blank" href="https://www.instagram.com/">
 					<img src={InstagramLogo} alt="" />
 				</a>
 			  </SocialLogoContainer>
 			
 		  </Socialogo>
+		  
       </FooterContainer>
     )
   }
