@@ -61,6 +61,7 @@ const Orçamento = styled.h4 `
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     :hover {
         color:#A52A2A;
+        cursor:pointer;
     }
 `
 const NomeDoServiço = styled.p ` 
