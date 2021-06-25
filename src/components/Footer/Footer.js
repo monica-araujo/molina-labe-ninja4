@@ -19,6 +19,7 @@ const Titles = styled.h3`
 `
 const Paragraph = styled.p` 
 	color: #4f4f50;
+
 `
 
 const LogoContainer = styled.div` 
@@ -42,6 +43,7 @@ const Socialogo = styled.div`
 const SocialLogoContainer = styled.div`
 	a{
 		padding: 5px;
+		
 	}
 `
 
