@@ -1,9 +1,10 @@
 import React from 'react'
-import { AppContainer } from './components/AppContainer'
+import Header from './components/header'
 
 function App() {
 	return (
-        <AppContainer />
+        <Header />
+
 	)
 }
 
