@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import ShoppingCart from '../../images/shopping-cart.png';
+import { convertDate } from '../../utils/convertDate';
 
 
 const ContainerMain = styled.div`
@@ -14,18 +15,17 @@ const FilterContainer = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: white;
-  box-shadow: 3px 3px 0.4em #484848, -0.3em 0 0.4em #484848;
+  box-shadow: 2px 2px 0.4em #484848;
   width: 80%;
  `
 
 const CardContainer = styled.div` 
-    display: grid;
-    grid-template-columns: 80% 1fr;
-    height: 160px;
-    background-color: white;
-    box-shadow: 3px 3px 0.4em #484848, -0.3em 0 0.4em #484848;
-    margin: 20px;
-    padding: 20px;
+  display: grid;
+  grid-template-columns: 80% 1fr;
+  height: 160px;
+  background-color: white;
+  border-top: 1px solid #484848;
+  padding: 20px;
 
 
 
@@ -79,20 +79,17 @@ export class MainCards extends Component {
       return (
         <CardContainer>
             <div>
-            <h3>{jobs.title} </h3> <i> - Data de vencimento: {jobs.dueDate}</i>
+            <h3>{jobs.title} </h3> <i> - Data de vencimento: {convertDate(jobs.dueDate)}</i>
                 <ItalicText>{jobs.description}</ItalicText>
-                <h3>Preço: {jobs.price},00</h3>
+                <p>Método de pagamento: </p>
+                <p>{jobs.paymentMethods}</p>
             </div>
             <ShoppingCartContainer>
                 <button>
                 <img src={ShoppingCart} alt="Carrinho" /> 
                 <p>Colocar no carrinho</p>
                 </button>
-                <DivSelect name="select">
-                    <option value="">Método de pagamento</option>
-                    <option value="">Boleto</option>
-                    <option value="">PayPal</option>
-                </DivSelect>
+                <h3>Preço: R$ {jobs.price},00</h3>               
             </ShoppingCartContainer>
         </CardContainer>    
       )
