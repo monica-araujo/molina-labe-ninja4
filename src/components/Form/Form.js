@@ -41,7 +41,6 @@ const SelectContainer = styled.select`
     width: 260px;
 `
 
-
 const ButtonStylized = styled.button`
     background-color: #000003;
     color: white;
@@ -56,7 +55,6 @@ const ButtonStylized = styled.button`
         color: #000003;
     }
  `
-
 
 export class Form extends Component {
     state = {
