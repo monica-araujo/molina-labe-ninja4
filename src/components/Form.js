@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 
 const FormContainer = styled.div` 
-    background-color: #b000c5;
+    background-color: #f6f2fc;
     height: 400px;
     display: flex;
     flex-direction: column;
@@ -11,7 +11,7 @@ const FormContainer = styled.div`
     justify-content: center;
 
     h1, p{
-        color: white;
+        color:#7869BF;
     }
 `
 
@@ -27,19 +27,34 @@ const FormBox = styled.div`
 
 const LabelContainer = styled.label`
     margin-right: 40px;
+    font-family: 'Roboto Mono';
+    
+
 `
 
 const TextArea = styled.textarea`
     width: 550px;
+    border-radius: 5px;
     height: 50px;
+    border: none;
+    font-family: 'Roboto Mono';
 `
 const InputContainer = styled.input` 
     width: 250px;
+    border-radius: 5px;
+    border: none;
+    height:30px;
+    font-family: 'Roboto Mono';
 ` 
 const SelectContainer = styled.select`
     width: 260px;
-`
+    border-radius: 5px;
+    border: none;
+    height:30px;
+    color:#7869BF;
 
+
+`
 
 const ButtonStylized = styled.button`
     background-color: #000003;
@@ -58,118 +73,128 @@ const ButtonStylized = styled.button`
 
 
 export class Form extends Component {
+
     state = {
-        job: "",
-        preco: "",
-        metododePagamento: [],
-        dataDeVencimento:"",
-        descricao: ""
+        titulo: "",
+        descricao: "",
+        preco:"",
+        pagamento: [],
+        data:""
     }
 
-   /*  componentDidMount(){
-        this.postJobs()
-    } */
-
-    OnChangeJob = (e) => {
-        this.setState({job: e.target.value})
+    componentDidMount () {
+        // this.adicionarUmNinja()
     }
 
-    OnChangePreco = (e) => {
-        this.setState({preco: e.target.value})
-    }
+    
 
-
-    OnChangeDataDeVencimento = (e) => {
-        this.setState({dataDeVencimento: e.target.value})
-    }
-
-    OnChangeDescricao = (e) => {
-        this.setState({descricao: e.target.value})
-    }
-
-    postJobs = () => {
-        const url = "https://labeninjas.herokuapp.com/jobs"
-        const body = {
-            title: this.state.job,
-            description: this.state.descricao,
-            price: this.state.preco,
-            paymentMethods: this.state.metododePagamento,
-            dueDate: this.state.dataDeVencimento, 
-        }
+    adicionarUmNinja = async () => {
+            const body = {
+              title: this.state.titulo,
+              description: this.state.descricao,
+              price: Number(this.state.preco),
+              paymentMethods: [this.state.pagamento],
+              dueDate: this.state.data
         
-        axios
-        .post(url, body, {
-            headers: {
-                Authorization: "f7402425-2752-4496-810f-b228d56e2527"
             }
-        })
-        .then((res) => {
-            console.log(res.data)
-        })
-        .catch((err) => {
-            console.log(err.message)
-        })
+            try {
+                const url = "https://labeninjas.herokuapp.com/jobs"
+              await axios.post(url, body, {
+                headers: {
+                    Authorization: "f7402425-2752-4496-810f-b228d56e2527"
+                }
+              }) 
+              alert('Cadastro realizado com sucesso!')
+              
+              this.setState({
+                titulo: '',
+                preco: '',
+                descricao: '',
+                pagamento: [],
+                data: ''
+              })
+        
+            } catch (err) {
+            console.log(err.response.data)
+        }
     }
 
   render() {
     return (
 
         <FormContainer>
-            <h1>Conte nos o que precisa realizar</h1>
+
+            <h1> Cadastre o seu serviço </h1>
+
+
             <FormBox>
                 <FormFlex >
+
                     <LabelContainer >
                         <p>Job: </p>            
                         <InputContainer 
-                            type="text" 
-                            value={this.state.job}
-                            onChange={this.OnChangeJob}
+                            value={this.state.titulo}
+                            onChange={e => this.setState({ titulo: e.target.value })}
                         />
                     </LabelContainer>
+
                     <LabelContainer >
                         <p>Preço: </p> 
-                        <InputContainer 
-                            type="number" 
+                        <InputContainer  
                             value= {this.state.preco}
-                            onChange={this.OnChangePreco}
+                            onChange={e => this.setState({ preco: e.target.value })}
                         />
                     </LabelContainer>
+
                 </FormFlex>
+
+
                 <FormFlex >
+
                     <LabelContainer >
                         <p>Método de pagamento:</p>
-                        <SelectContainer >
+                        <SelectContainer onChange={e => this.setState({ pagamento: e.target.value })}>
                             <option></option>
                             <option value="boleto">Boleto</option>
-                            <option value="cartao">Cartão de crédito</option>
+                            <option value="cartao">Cartão de Crédito</option>
+                            <option value="PayPal">Cartão de Débito</option>
                             <option value="PayPal">PayPal</option>
+                            <option value="cartao">Pix</option>
+
                         </SelectContainer>
                     </LabelContainer>
+
                     <LabelContainer >
                         <p>Data de vencimento:</p>
                         <InputContainer 
                             type="date" 
-                            value={this.state.dataDeVencimento}
-                            onChange={this.OnChangeDataDeVencimento}
+                            value={this.state.data}
+                            onChange={e => this.setState({ data: e.target.value })}
                         />
                     </LabelContainer>
+
                 </FormFlex>
+
                 <form >
+
                     <label >
                         <p>Descrição:</p>
                         <TextArea 
-                        type="text" 
                         value={this.state.descricao}
-                        onChange={this.OnChangeDescricao}
+                        onChange={e => this.setState({ descricao: e.target.value })}
                         />
                     </label>
+
                 </form>
+
             </FormBox>
-            <ButtonStylized
-                onClick={this.postJobs}
-            >
-                Submit
+
+
+            <ButtonStylized onClick={this.adicionarUmNinja}>
+                Cadastrar
             </ButtonStylized>
+
+
         </FormContainer>
 
     )

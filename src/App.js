@@ -1,7 +1,8 @@
 import React from 'react'
 import Conteiner from './components/AppConteiner'
 import Cadastro from './components/Cadastro'
-
+import Carrinho from './components/Carrinho'
+import ListaDeServicos from './components/ListaDeServicos'
 export default class App extends React.Component {
 
 	state = {
@@ -12,20 +13,32 @@ export default class App extends React.Component {
 		switch (this.state.telaAtual) {
 
 			case "conteiner":
-				return <Conteiner trocarParaTelaCadastro={this.trocarParaTelaCadastro} />
+				return <Conteiner trocarParaTelaDeLista={this.trocarParaTelaDeLista} trocarParaTelaCadastro={this.trocarParaTelaCadastro} trocarParaTelaCarrinho={this.trocarParaTelaCarrinho} />
 			case "cadastro":
 				return <Cadastro trocarParaTelaConteiner={this.trocarParaTelaConteiner} />
-			default:
+			case 'carrinho':
+				return <Carrinho trocarParaTelaDeLista={this.trocarParaTelaDeLista} trocarParaTelaCadastro={this.trocarParaTelaCadastro} trocarParaTelaConteiner={this.trocarParaTelaConteiner} />
+			case 'servicos':
+				return <ListaDeServicos trocarParaTelaConteiner={this.trocarParaTelaConteiner} trocarParaTelaCadastro={this.trocarParaTelaCadastro} trocarParaTelaCarrinho={this.trocarParaTelaCarrinho}/>
+				default:
 				return <div>ERRO</div>
 		}
 	}
 
+	trocarParaTelaDeLista = () => {
+		this.setState({ telaAtual: 'servicos'})
+	}
+
+
 	trocarParaTelaConteiner = () => {
 		this.setState({ telaAtual: 'conteiner' })
 	}
+
 	trocarParaTelaCadastro = () => {
 		this.setState({ telaAtual: 'cadastro' })
-		console.log("trocarParaTelaCadastro")
+	}
+	trocarParaTelaCarrinho = () => {
+		this.setState({ telaAtual: 'carrinho' })
 	}
 
 	render() {

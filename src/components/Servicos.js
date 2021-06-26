@@ -56,20 +56,24 @@ const TextoPrincipal = styled.h1 `
     color: #494949 ;
 `
 
-const Orçamento = styled.h4 ` 
-    color: #4B0082;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    :hover {
-        color:#A52A2A;
-        cursor:pointer;
-    }
-`
 const NomeDoServiço = styled.p ` 
 
     font-family: 'Roboto Mono';
     font-size: 15px;
     color:#5f2b8c;
     text-align: center;
+`
+
+const ButtonTransparente = styled.button ` 
+    border: none;
+    color: #4B0082;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: transparent;
+    cursor:pointer;
+    &:hover {
+        color: #cb00d2;
+        font-weight: bold;
+    }
 `
 
 export default class Servicos extends React.Component {
@@ -96,7 +100,7 @@ export default class Servicos extends React.Component {
                         <Card>
                             <Image src={frontend} />
                             <NomeDoServiço>Front-end Developer</NomeDoServiço>
-                            <Orçamento>Solicitar orçamento</Orçamento>
+                            <ButtonTransparente onClick={this.props.trocarParaTelaDeLista} >Contratar serviço</ButtonTransparente>
 
                         </Card>
 
@@ -104,7 +108,7 @@ export default class Servicos extends React.Component {
                         <Card>
                             <Image src={backend} />
                             <NomeDoServiço>Back-end Developer</NomeDoServiço>
-                            <Orçamento>Solicitar orçamento</Orçamento>
+                            <ButtonTransparente onClick={this.props.trocarParaTelaDeLista} >Contratar serviço</ButtonTransparente>
 
                         </Card>
 
@@ -112,28 +116,28 @@ export default class Servicos extends React.Component {
                         <Card> 
                             <Image src={fullstack} />   
                             <NomeDoServiço>Full Stack Developer</NomeDoServiço>
-                            <Orçamento>Solicitar orçamento</Orçamento>
+                            <ButtonTransparente onClick={this.props.trocarParaTelaDeLista} >Contratar serviço</ButtonTransparente>
 
                         </Card>
 
                         <Card> 
                             <Image src={uiux} />
                             <NomeDoServiço>UX/UI Designer</NomeDoServiço>
-                            <Orçamento>Solicitar orçamento</Orçamento>
+                            <ButtonTransparente onClick={this.props.trocarParaTelaDeLista} >Contratar serviço</ButtonTransparente>
 
                         </Card>
 
                         <Card> 
                             <Image src={game} />
                             <NomeDoServiço>Game Developer</NomeDoServiço>
-                            <Orçamento>Solicitar orçamento</Orçamento>
+                            <ButtonTransparente onClick={this.props.trocarParaTelaDeLista} >Contratar serviço</ButtonTransparente>
 
                         </Card>
 
                         <Card> 
                             <Image src={flutter} />
                             <NomeDoServiço>Flutter Developer</NomeDoServiço>
-                            <Orçamento>Solicitar orçamento</Orçamento>
+                            <ButtonTransparente onClick={this.props.trocarParaTelaDeLista} >Contratar serviço</ButtonTransparente>
 
                         </Card>
                     </Carousel>
