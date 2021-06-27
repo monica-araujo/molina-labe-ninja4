@@ -55,6 +55,7 @@ import LogoCarrinho from "../images/shopping-cart-menor.png"
   
   const ButtonTransparente = styled.button ` 
   border: none;
+  font-size: 16px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   background-color: transparent;
   cursor:pointer;

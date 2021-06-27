@@ -8,7 +8,7 @@ export default class Conteiner extends React.Component {
     render() {
         return(
             <div>
-                <Servicos trocarParaTelaDeLista={this.props.trocarParaTelaDeLista}/>
+                <Servicos trocarParaTelaDeLista={this.props.trocarParaTelaDeLista} trocarParaTelaCadastro={this.props.trocarParaTelaCadastro}/>
                 <Footer />
             </div>
         )

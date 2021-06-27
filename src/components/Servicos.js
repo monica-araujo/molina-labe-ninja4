@@ -9,6 +9,7 @@ import fullstack from '../img/fullstack.png';
 import uiux from '../img/UIUX-1.png';
 import Carousel  from 'react-elastic-carousel';
 import Banner from './Banner';
+import Comentarios from "./comentarios"
 
 
 const Image = styled.img ` 
@@ -30,7 +31,7 @@ const ConteinerCard = styled.div `
 
 `
 const Conteiner = styled.div ` 
-    background-color: #f5f4fc;
+    background-color: #8b26c5;
 `
 
 const Card = styled.div `
@@ -54,14 +55,14 @@ const TextoPrincipal = styled.h1 `
 
     text-align: center;
     font-family: 'Roboto Mono';
-    color: #494949 ;
+    color: white ;
 `
 
 const NomeDoServiço = styled.p ` 
 
     font-family: 'Roboto Mono';
     font-size: 15px;
-    color:#5f2b8c;
+    color:white;
     text-align: center;
 `
 
@@ -83,7 +84,7 @@ export default class Servicos extends React.Component {
 
         return (
             <>
-                <Banner />
+                <Banner trocarParaTelaDeLista={this.props.trocarParaTelaDeLista} trocarParaTelaCadastro={this.props.trocarParaTelaCadastro}/>
                 <Conteiner> 
                     <div>
 
@@ -144,9 +145,9 @@ export default class Servicos extends React.Component {
                             </Card>
                         </Carousel>
                     </ConteinerCard>
-
-                
+    
                 </Conteiner>
+                <Comentarios/>
             </>
             
             

@@ -4,6 +4,14 @@ import Cadastro from './components/pages/Cadastro'
 import Carrinho from './components/pages/Carrinho'
 import ListaDeServicos from './components/pages/ListaDeServicos'
 import Header from './components/header'
+import { createGlobalStyle } from 'styled-components'
+
+
+const GlobalStyle = createGlobalStyle`
+	*{
+		font-family: 'Noto Sans JP', sans-serif;
+	}
+`
 
 
 export default class App extends React.Component {
@@ -77,6 +85,7 @@ export default class App extends React.Component {
 
 		return (
 			<div>
+				<GlobalStyle/>
 				<Header 
                     trocarParaTelaConteiner={this.trocarParaTelaConteiner}  
                     trocarParaTelaDeLista={this.trocarParaTelaDeLista} 
