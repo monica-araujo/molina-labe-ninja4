@@ -8,6 +8,7 @@ import frontend from '../img/Front-end.png';
 import fullstack from '../img/fullstack.png';
 import uiux from '../img/UIUX-1.png';
 import Carousel  from 'react-elastic-carousel';
+import Banner from './Banner';
 
 
 const Image = styled.img ` 
@@ -81,70 +82,74 @@ export default class Servicos extends React.Component {
       render() {
 
         return (
-            
-            <Conteiner> 
-                <div>
+            <>
+                <Banner />
+                <Conteiner> 
+                    <div>
 
-                    <TextoPrincipal>Principais serviços pedidos</TextoPrincipal>
+                        <TextoPrincipal>Principais serviços pedidos</TextoPrincipal>
 
-                    <NomeDoServiço>Os serviços mais realizados de cada categoria</NomeDoServiço>
-                        
+                        <NomeDoServiço>Os serviços mais realizados de cada categoria</NomeDoServiço>
+                            
 
-                </div>
+                    </div>
+
+                    
+
+                    <ConteinerCard>
+
+                        <Carousel > 
+                            <Card>
+                                <Image src={frontend} />
+                                <NomeDoServiço>Front-end Developer</NomeDoServiço>
+                                <ButtonTransparente onClick={this.props.trocarParaTelaDeLista} >Contratar serviço</ButtonTransparente>
+
+                            </Card>
+
+
+                            <Card>
+                                <Image src={backend} />
+                                <NomeDoServiço>Back-end Developer</NomeDoServiço>
+                                <ButtonTransparente onClick={this.props.trocarParaTelaDeLista} >Contratar serviço</ButtonTransparente>
+
+                            </Card>
+
+
+                            <Card> 
+                                <Image src={fullstack} />   
+                                <NomeDoServiço>Full Stack Developer</NomeDoServiço>
+                                <ButtonTransparente onClick={this.props.trocarParaTelaDeLista} >Contratar serviço</ButtonTransparente>
+
+                            </Card>
+
+                            <Card> 
+                                <Image src={uiux} />
+                                <NomeDoServiço>UX/UI Designer</NomeDoServiço>
+                                <ButtonTransparente onClick={this.props.trocarParaTelaDeLista} >Contratar serviço</ButtonTransparente>
+
+                            </Card>
+
+                            <Card> 
+                                <Image src={game} />
+                                <NomeDoServiço>Game Developer</NomeDoServiço>
+                                <ButtonTransparente onClick={this.props.trocarParaTelaDeLista} >Contratar serviço</ButtonTransparente>
+
+                            </Card>
+
+                            <Card> 
+                                <Image src={flutter} />
+                                <NomeDoServiço>Flutter Developer</NomeDoServiço>
+                                <ButtonTransparente onClick={this.props.trocarParaTelaDeLista} >Contratar serviço</ButtonTransparente>
+
+                            </Card>
+                        </Carousel>
+                    </ConteinerCard>
 
                 
-
-                <ConteinerCard>
-
-                    <Carousel > 
-                        <Card>
-                            <Image src={frontend} />
-                            <NomeDoServiço>Front-end Developer</NomeDoServiço>
-                            <ButtonTransparente onClick={this.props.trocarParaTelaDeLista} >Contratar serviço</ButtonTransparente>
-
-                        </Card>
-
-
-                        <Card>
-                            <Image src={backend} />
-                            <NomeDoServiço>Back-end Developer</NomeDoServiço>
-                            <ButtonTransparente onClick={this.props.trocarParaTelaDeLista} >Contratar serviço</ButtonTransparente>
-
-                        </Card>
-
-
-                        <Card> 
-                            <Image src={fullstack} />   
-                            <NomeDoServiço>Full Stack Developer</NomeDoServiço>
-                            <ButtonTransparente onClick={this.props.trocarParaTelaDeLista} >Contratar serviço</ButtonTransparente>
-
-                        </Card>
-
-                        <Card> 
-                            <Image src={uiux} />
-                            <NomeDoServiço>UX/UI Designer</NomeDoServiço>
-                            <ButtonTransparente onClick={this.props.trocarParaTelaDeLista} >Contratar serviço</ButtonTransparente>
-
-                        </Card>
-
-                        <Card> 
-                            <Image src={game} />
-                            <NomeDoServiço>Game Developer</NomeDoServiço>
-                            <ButtonTransparente onClick={this.props.trocarParaTelaDeLista} >Contratar serviço</ButtonTransparente>
-
-                        </Card>
-
-                        <Card> 
-                            <Image src={flutter} />
-                            <NomeDoServiço>Flutter Developer</NomeDoServiço>
-                            <ButtonTransparente onClick={this.props.trocarParaTelaDeLista} >Contratar serviço</ButtonTransparente>
-
-                        </Card>
-                    </Carousel>
-                </ConteinerCard>
-
-               
-            </Conteiner>
+                </Conteiner>
+            </>
+            
+            
         )
     }
 }

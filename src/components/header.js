@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Logo from "../img2/logo.png";
+import LogoCarrinho from "../images/shopping-cart-menor.png"
 
   const ImagemLogo = styled.img`
     width: 125px;
@@ -15,7 +16,7 @@ import Logo from "../img2/logo.png";
     align-items: center;
     display: flex;
     background-color: #f6f2fc;
-    height: 50px;
+    height: 70px;
     justify-content: space-between;
   `;
 
@@ -30,7 +31,7 @@ import Logo from "../img2/logo.png";
     margin-left: 25px;
     cursor: pointer;
     &:hover {
-      color: #cb00d2;
+      color: #7869BF;
       font-weight: bold;
     }
   `;
@@ -44,6 +45,7 @@ import Logo from "../img2/logo.png";
     align-items: center;
     cursor: pointer;
     border: none;
+    transition: 0.5s;
     &:hover {
       background-color: #b7b4ba;
       color: #7869BF;
@@ -61,6 +63,18 @@ import Logo from "../img2/logo.png";
       font-weight: bold;
     }
   `
+  const Carrinho = styled.img`
+    position: relative;
+  `
+
+  const NumeroCarrinho = styled.p`
+    position: relative;
+    display: inline;
+    background-color: #464646;
+    padding: 4px;
+    color:white;
+    border-radius: 40px;
+  `
 
 export default class header extends React.Component {
   render() {
@@ -74,7 +88,10 @@ export default class header extends React.Component {
             </Li>
 
             <Li>
-              <ButtonTransparente onClick={this.props.trocarParaTelaCarrinho}>Carrinho</ButtonTransparente>
+              <ButtonTransparente onClick={this.props.trocarParaTelaCarrinho}>
+                <Carrinho src={LogoCarrinho} alt="carrinho" />
+                <NumeroCarrinho>{this.props.cart ? this.props.cart.length : 0}</NumeroCarrinho>
+              </ButtonTransparente>
               
             </Li>
 

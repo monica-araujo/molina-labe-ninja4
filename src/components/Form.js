@@ -9,6 +9,7 @@ const FormContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
 
     h1, p{
         color:#7869BF;
@@ -52,8 +53,6 @@ const SelectContainer = styled.select`
     border: none;
     height:30px;
     color:#7869BF;
-
-
 `
 
 const ButtonStylized = styled.button`
@@ -70,7 +69,6 @@ const ButtonStylized = styled.button`
         color: #000003;
     }
  `
-
 
 export class Form extends Component {
 
@@ -155,11 +153,11 @@ export class Form extends Component {
                         <p>Método de pagamento:</p>
                         <SelectContainer onChange={e => this.setState({ pagamento: e.target.value })}>
                             <option></option>
-                            <option value="boleto">Boleto</option>
-                            <option value="cartao">Cartão de Crédito</option>
-                            <option value="PayPal">Cartão de Débito</option>
+                            <option value="Boleto">Boleto</option>
+                            <option value="Cartão de Crédito">Cartão de Crédito</option>
+                            <option value="Cartão de Débito">Cartão de Débito</option>
                             <option value="PayPal">PayPal</option>
-                            <option value="cartao">Pix</option>
+                            <option value="Pix">Pix</option>
 
                         </SelectContainer>
                     </LabelContainer>
