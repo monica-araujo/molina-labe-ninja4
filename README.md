@@ -45,7 +45,7 @@ https://projetolabeninja4.surge.sh/
         
         - Prazo
         
-    ##Tecnologias:
+    ## Tecnologias:
     -ReactJs
     -styled-components
     -axios
@@ -58,4 +58,8 @@ https://projetolabeninja4.surge.sh/
 
 ![image](https://user-images.githubusercontent.com/68256101/123563147-6cc0d400-d789-11eb-8ced-4f46f89b89c8.png)
 
-
+## Desenvolvedores:
+- Elaini Cristina
+- Felipe Souto
+- Mônica Araujo
+- Rafael Soares
